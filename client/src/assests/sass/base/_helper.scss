@@ -82,13 +82,27 @@
   border: unset!important;
 }
 
-.w-80{
-  width: 80% !important;
-}
 
 .w-20{
   width: 20% !important;
 }
+
+.w-30{
+  width: 30% !important;
+}
+
+.w-35{
+  width: 35% !important;
+}
+
+.w-40{
+  width: 40% !important;
+}
+
+.w-80{
+  width: 80% !important;
+}
+
 .w-100{
   width: 100%;
 }
@@ -98,4 +112,14 @@
 .b-radius-100{
   border-radius: 100%;
   overflow: hidden;
+}
+
+
+
+.success{
+  color: $color-success;
+}
+
+.danger{
+  color: $color-danger;
 }

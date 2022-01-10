@@ -1,5 +1,5 @@
 const express = require('express');
-const {body} = require('express-validator')
+const {body,check} = require('express-validator')
 const asyncHandler = require('express-async-handler')
 
 const classController = require('../controllers/classControllers')
@@ -27,14 +27,12 @@ router.post('/addClass', isAuth,
     validateExpress, asyncHandler(classController.addClass))
 
 
-router.post('/getClasses',  isAuth, asyncHandler(classController.getClasses))
+router.get('/getClasses',  isAuth, asyncHandler(classController.getClasses))
 
-router.post('/getClassesData', isAuth, asyncHandler(classController.getClassesData))
+router.get('/getClassesData', isAuth, asyncHandler(classController.getClassesData))
 
-
-
-router.post('/getClassData', isAuth,[
-        body('classID').notEmpty().withMessage('Please select a valid Class.').custom((classID, {req}) => {
+router.get('/getClassData', isAuth,[
+        check('classID').notEmpty().withMessage('Please select a valid Class.').custom((classID, {req}) => {
             return InstituteClass.exists({_id: classID, institute: req.user.instituteID.toString()})
                 .then(isPresent => {
                     if (!isPresent) return Promise.reject('Class Not Found!');

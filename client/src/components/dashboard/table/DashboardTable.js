@@ -1,7 +1,7 @@
 import React from "react"
 
 
-const MarkAttendance = (props) => {
+const AddTeacher = (props) => {
 
     return (
         <div className='addClass'>
@@ -12,4 +12,4 @@ const MarkAttendance = (props) => {
 }
 
 
-export default MarkAttendance;
+export default AddTeacher;

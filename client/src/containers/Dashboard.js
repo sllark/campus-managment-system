@@ -11,7 +11,7 @@ import AddStudent from "../components/dashboard/student/AddStudent";
 
 import AddTeacher from "../components/dashboard/teacher/AddTeacher";
 
-import MarkAttendance from "../components/dashboard/attendance/MarkAttendance";
+import Attendance from "../components/dashboard/attendance/Attendance";
 import CheckAttendance from "../components/dashboard/attendance/CheckAttendance";
 
 const Dashboard = (props) => {
@@ -36,8 +36,8 @@ const Dashboard = (props) => {
 
                     <Route path='/addTeacher' element={<AddTeacher/>}/>
 
-                    <Route path='/markAttendance' element={<MarkAttendance/>}/>
-                    <Route path='/checkAttendance' element={<CheckAttendance/>}/>
+                    <Route path='/markAttendance' element={<Attendance/>}/>
+                    <Route path='/checkAttendance' element={<Attendance isStatic={true}/>}/>
 
 
                 </Routes>

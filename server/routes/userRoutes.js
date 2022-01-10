@@ -32,7 +32,7 @@ router.post('/addStudent', isAuth, [
         }),
     body('rollNo').notEmpty().isLength({min: 1}).withMessage('Roll Number not found.')
         .custom((value, {req}) => {
-            return User.exists({'rollNo': value, class: req.body.className})
+            return User.exists({'rollNo': value, 'class': req.body.studentClass})
                 .then(isPresent => {
                     if (isPresent) return Promise.reject('Roll Number already taken!');
                     else return true;
@@ -58,7 +58,7 @@ router.post('/addTeacher', isAuth, [
         .custom((value, {req}) => {
             return User.exists({'staffID': value, institute: req.user.instituteID})
                 .then(isPresent => {
-                    if (!isPresent) return Promise.reject('Staff ID already taken.');
+                    if (isPresent) return Promise.reject('Staff ID already taken.');
                     else return true;
                 })
         }),

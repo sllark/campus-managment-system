@@ -1,4 +1,4 @@
-form{
+form {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -6,7 +6,7 @@ form{
   width: 100%;
 
 
-  .formGroup{
+  .formGroup {
 
     display: flex;
     flex-flow: column;
@@ -16,15 +16,14 @@ form{
     margin-bottom: 2rem;
 
 
-    &.w-50{
+    &.w-50 {
       width: 48%;
     }
 
   }
 
 
-
-  label{
+  label {
     width: 100%;
 
     display: flex;
@@ -34,14 +33,14 @@ form{
 
     margin: 0 0 0.8rem;
 
-    p{
+    p {
       font-size: 1.65em;
       color: $color-primary;
       text-transform: capitalize;
     }
 
 
-    span{
+    span {
       color: $color-danger;
       font-size: 1.4rem;
       font-weight: 500;
@@ -50,7 +49,8 @@ form{
 
   }
 
-  .formErrorMsg{
+  .formErrorMsg,
+  .formFeedback {
     color: $color-danger;
     font-size: 1.6rem;
     font-weight: 500;
@@ -58,30 +58,39 @@ form{
     margin-bottom: 1rem;
   }
 
+  .formFeedback {
 
+    width: 100%;
+    text-align: center;
+    font-size: 1.8rem;
+
+    &.success {
+      color: $color-success !important;
+    }
+  }
 
 
 }
 
-input,select,textarea{
+input, select, textarea {
 
   width: 100%;
   padding: 1.4rem;
   font-size: 1.75rem;
 
-  border-radius:$input-border-radius;
+  border-radius: $input-border-radius;
   border: $input-border;
   background-color: $color-bg;
 
   &:focus,
-  &:active{
+  &:active {
     border-color: rgba($color-primary, 0.7);
-    box-shadow: 0 4px 12px rgba(#000,0.1);
+    box-shadow: 0 4px 12px rgba(#000, 0.1);
   }
 
-  &::placeholder{
+  &::placeholder {
     font-size: 1.4rem;
-    color: rgba($color-text,0.4);
+    color: rgba($color-text, 0.4);
   }
 
 

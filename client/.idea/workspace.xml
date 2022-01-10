@@ -5,37 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcf9ce6d-b38e-41e4-a4b7-33306d3ec24a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assests/img/avatar1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/dashboard/instituteClass/ClassInfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/dashboard/instituteClass/Classes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sidebar/SidebarItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/FieldHeader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/axios.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/fieldChangeHandler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/formValidation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/validateRule.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/dashboard/attendance/Attendance.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/Loading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/getClasses.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assests/sass/abstracts/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assests/sass/abstracts/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assests/sass/base/_helper.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assests/sass/base/_helper.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assests/sass/components/_btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assests/sass/components/_btn.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assests/sass/components/_form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assests/sass/components/_form.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assests/sass/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assests/sass/layout/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assests/sass/layout/_sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assests/sass/layout/_sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assests/sass/pages/_authPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assests/sass/pages/_authPage.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assests/sass/pages/_dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assests/sass/pages/_dashboard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/instituteClass/AddClass.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/SidebarItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/attendance/MarkAttendance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/table/DashboardTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/instituteClass/AddClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/instituteClass/AddClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/instituteClass/ClassInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/instituteClass/ClassInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/instituteClass/Classes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/instituteClass/Classes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/student/AddStudent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/student/AddStudent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/teacher/AddTeacher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/teacher/AddTeacher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/SidebarItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/SidebarItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/config/prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/config/prod.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/controllers/authControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/controllers/authControllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/routes/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/routes/authRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/controllers/classControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/controllers/classControllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/controllers/userControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/controllers/userControllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/routes/classRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/routes/classRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/routes/userRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +43,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="JsbtTreeLayoutManager">
     <layout place="tools.popupGrunt">
@@ -76,7 +73,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/dashboard/instituteClass" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/helpers" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -88,11 +85,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client\src\components\dashboard\instituteClass" />
       <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client\src\helpers" />
-      <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client\src\assests\img" />
-      <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client\src" />
-      <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client" />
+      <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client\src\components\ui" />
+      <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client\src\components\dashboard\table" />
+      <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client\src\components\dashboard\attendance" />
+      <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client\src\components\dashboard\teacher" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client\src\components\sidebar" />
@@ -107,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1641754035987</updated>
-      <workItem from="1641754037165" duration="19745000" />
+      <workItem from="1641754037165" duration="39798000" />
     </task>
     <servers />
   </component>

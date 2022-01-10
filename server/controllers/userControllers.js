@@ -23,6 +23,7 @@ exports.addUser = async (req, res, next) => {
     let newUser = new User({
         email,
         'institute': req.user.instituteID,
+        password: '1234',
         firstName,
         lastName,
         dob,
@@ -37,6 +38,12 @@ exports.addUser = async (req, res, next) => {
         joiningDate,
     });
     await newUser.save();
+
+
+    let cls = await InstituteClass.findById(studentClass).select('students');
+    cls.students.push(newUser._id);
+    await cls.save();
+
 
     res.status(201)
         .json({
@@ -54,7 +61,7 @@ exports.getClassStudents = async (req, res, next) => {
     } = req.query;
 
 
-    let users = User.find({
+    let users = await User.find({
         class: classID,
         institute: req.user.instituteID,
         role: 'Student'
@@ -78,7 +85,7 @@ exports.getClassTeachers = async (req, res, next) => {
     } = req.query;
 
 
-    let users = User.find({
+    let users = await User.find({
         institute: req.user.instituteID,
         'class': classID,
         role: 'Teacher'
@@ -95,7 +102,6 @@ exports.getClassTeachers = async (req, res, next) => {
 
 }
 
-
 exports.markAttendance = async (req, res, next) => {
 
     //students[{isPresent, _id}]
@@ -107,7 +113,7 @@ exports.markAttendance = async (req, res, next) => {
     } = req.body;
 
 
-    let users = User.find({
+    let users = await User.find({
         institute: req.user.instituteID,
         'class': classID,
         role: 'Student'
@@ -132,10 +138,10 @@ exports.markAttendance = async (req, res, next) => {
 
         let userAttendance = users[i];
         await Attendance.updateOne({
-            'date':new Date(date).toISOString(),
-            'student':userAttendance.student,
-            'attendanceClass':userAttendance.attendanceClass
-        },userAttendance,{upsert:true})
+            'date': new Date(date).toISOString(),
+            'student': userAttendance.student,
+            'attendanceClass': userAttendance.attendanceClass
+        }, userAttendance, {upsert: true})
 
     }
 
@@ -156,22 +162,19 @@ exports.getAttendance = async (req, res, next) => {
     } = req.query;
 
 
-    let attendances = Attendance.find({
+    let attendances = await Attendance.find({
         institute: req.user.instituteID,
         'class': classID,
-        'date':new Date(date).toISOString(),
+        'date': new Date(date).toISOString(),
     })
         .select('isPresent student')
-        .populate('student','firstName lastName rollNo,')
-
-
-
+        .populate('student', 'firstName lastName rollNo,')
 
 
     res.status(201)
         .json({
             'message': "success",
-            'studentsAttendance':attendances
+            'studentsAttendance': attendances
         });
 
 
@@ -184,22 +187,22 @@ exports.getInitialAttendance = async (req, res, next) => {
         studentClass: classID,
     } = req.query;
 
+    console.log(req.query,req.user.instituteID);
 
-    let users = User.find({
-        institute: req.user.instituteID,
+    let users = await User.find({
+        'institute': req.user.instituteID,
         'class': classID,
-        role: 'Student'
+        'role': 'Student'
     })
         .select('firstName lastName rollNo').lean();
 
+    console.log(users);
 
-    let studentsAttendance = Attendance.find({
+    let studentsAttendance = await Attendance.find({
         'attendanceClass': classID,
         'date': new Date(date).toISOString(),
     })
         .select('isPresent student').lean();
-
-
 
 
     users.map(user => {
@@ -209,12 +212,10 @@ exports.getInitialAttendance = async (req, res, next) => {
     })
 
 
-
-
     res.status(201)
         .json({
             'message': "success",
-            'initialAttendance':users
+            'initialAttendance': users
         });
 
 
