@@ -1,10 +1,26 @@
 form{
   display: flex;
-  flex-flow: column;
-  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 100%;
 
+
+  .formGroup{
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    width: 100%;
+
+    margin-bottom: 2rem;
+
+
+    &.w-50{
+      width: 48%;
+    }
+
+  }
 
 
 
@@ -16,37 +32,32 @@ form{
     align-items: center;
     flex-wrap: wrap;
 
-    margin: 0.8rem 0;
+    margin: 0 0 0.8rem;
 
     p{
-      font-size: 1.4rem;
-      color: rgba($color-text,0.85);
+      font-size: 1.65em;
+      color: $color-primary;
+      text-transform: capitalize;
     }
 
 
     span{
-      color: red;
-      font-size: 1.2rem;
-    }
-
-    .invalid{
-      border: 1px solid red;
+      color: $color-danger;
+      font-size: 1.4rem;
+      font-weight: 500;
     }
 
 
   }
 
-
-  .formGroup{
-    display: flex;
-    justify-content: space-between;
+  .formErrorMsg{
+    color: $color-danger;
+    font-size: 1.6rem;
+    font-weight: 500;
     width: 100%;
-
-    label{
-      width: 48%;
-    }
-
+    margin-bottom: 1rem;
   }
+
 
 
 
@@ -55,13 +66,12 @@ form{
 input,select,textarea{
 
   width: 100%;
-  padding: 1.5rem;
-  font-size: 1.8rem;
-  margin: 0.5rem 0;
+  padding: 1.4rem;
+  font-size: 1.75rem;
 
   border-radius:$input-border-radius;
   border: $input-border;
-
+  background-color: $color-bg;
 
   &:focus,
   &:active{

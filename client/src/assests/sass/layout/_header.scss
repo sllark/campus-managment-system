@@ -1,195 +1,113 @@
-.header{
-  //border: 1px solid black;
+.header {
+  border: 1px solid black;
 
-  //
+
   width: 100%;
-  background-color: white;
+  background-color: $color-primary;
   height: $header-height;
 
-  border-bottom: 1px solid $color-gray-300;
 
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
 
-  &__container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    padding: 0 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
 
-
-
-    @media (max-width: 760px) {
-      padding: 0 1rem;
-      //flex-flow: row;
-      //align-items: center;
-      //justify-content: space-between;
-    }
-
-
-  }
-
-
-  @media (max-width: 760px) {
-    //padding: 0.5rem 2rem;
-    //flex-flow: row;
-    //align-items: center;
-    //justify-content: space-between;
-  }
-
-
-  &__logo{
+  &__logo {
     height: 4rem;
 
-
-    @media (max-width: 760px) {
-     display: none;
-    }
-
-
   }
 
 
-  &__searchbar{
+  &__nav {
+
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60%;
-    width: 25%;
-    min-width: 25rem;
-    padding: 0.5rem 1.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 22px;
-    background-color: $color-bg-light;
 
 
-    @media (max-width: 760px) {
-      min-width: unset;
-      width: 50%;
-    }
+    &__profile {
 
-    &.focused{
-      border:1px solid rgba($color-primary, 0.7);
-      box-shadow: 0 4px 12px rgba(#000,0.1);
-    }
-
-    input{
-
-      width: calc(100% - 3rem);
-      height: 100%;
-      margin: 0;
-      padding: 0;
-
-      border: none;
-      background-color: transparent;
-
-      &:hover,
-      &:active,
-      &:focus{
-        border: none;
-        box-shadow: none;
-      }
-
-    }
-
-    button{
-
-      &:focus{
-        border:1px solid rgba($color-primary, 0.7);
-        box-shadow: 0 4px 12px rgba(#000,0.1);
-      }
-
-      svg{
-        width: 2rem;
-        height: 2rem;
-      }
-
-    }
-
-
-
-  }
-
-
-
-  &__controls{
-
-
-    width: 15%;
-    display: flex;
-    justify-content: center;
-
-
-    @media (max-width: 760px) {
-      position: absolute;
-      right: 10%;
-      top: 50%;
-      transform: translateY(-50%);
-      width: auto;
-    }
-    @media (max-width: 400px) {
-      right: 12%;
-    }
-
-    &__container{
-
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
-      margin: 0 1rem;
 
-      img{
-        width: 3.4rem;
+
+      &__imgCont {
+        width: 4.5rem;
+        height: 4.5rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 100%;
         cursor: pointer;
-        fill: $color-primary;
+
+        img {
+          border-radius: 100%;
+          object-fit: cover;
+        }
       }
 
 
+      &__popup {
+        position: absolute;
+        top: 100%;
+        right: 0;
 
-    }
+        background-color: white;
 
-    .logoutCont{
+        border-radius: 0.5rem;
+        padding: 1rem 1.5rem;
 
-      @media (max-width: 760px) {
-        display: none;
+        font-size: 1.7rem;
+        display: flex;
+        flex-flow: column;
+        white-space: pre;
+        min-width: 15rem;
+
+
+        transform: scaleY(1);
+        transform-origin: top;
+        transition: all 0.2s ease-in-out;
+
+        &__header {
+          color: $color-secondary-dark;
+          padding: 0.4rem 0;
+          border-bottom: 1px solid $color-light;
+        }
+
+        &__option {
+
+          margin: 1rem 0 0;
+          padding: 0.15rem 0;
+          display: block;
+
+        }
+
       }
+
+
+      .hidePopup {
+        transform: scaleY(0);
+      }
+
+
     }
 
 
   }
 
-
-  .addUnread{
-
-    position: absolute;
-    right: -1rem;
-    top: -0.3rem;
-    width: 2rem;
-    height: 2rem;
-    background-color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    color: white;
-    z-index: -1;
-    font-size: 0.8rem;
-
-
-    p{
-      line-height: 1;
-    }
-
-
-  }
 
 }
 
 
-
-
-.hideNav{
+.hideNav {
 
   @media (max-width: 760px) {
     transform: scaleY(0);
@@ -203,7 +121,7 @@
 }
 
 
-.hamburgerMenu{
+.hamburgerMenu {
   transition: all 0.2s ease-in-out;
 
   margin: 0 1rem;
@@ -216,7 +134,7 @@
   width: 3rem;
   height: 2.5rem;
 
-  div{
+  div {
     width: 100%;
     height: 2px;
     background-color: $color-primary;
@@ -232,8 +150,7 @@
 }
 
 
-
-.makeCross{
+.makeCross {
   transition: all 0.3s ease-in-out;
 
   @media (max-width: 760px) {

@@ -35,9 +35,7 @@ const User = new Schema({
     },
     dob: {
         type: Date,
-        required:true
     },
-
 
     //Student
     class: {

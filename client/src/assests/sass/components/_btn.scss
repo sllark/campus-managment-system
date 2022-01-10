@@ -2,6 +2,7 @@
 
   color: white;
   border: 1px solid transparent;
+  border-radius: 0.5rem;
   transition: all 0.1s ease-in;
 
 
@@ -9,11 +10,15 @@
     border-color: rgba($color-primary, 0.7);
     box-shadow: 0 4px 12px rgba(#000,0.1);
     cursor: pointer;
+    text-decoration: none;
   }
+
 
 
   &--primary{
     background-color: $color-primary;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
 
 
     &:focus,&:hover{
@@ -43,6 +48,23 @@
 
   }
 
+  &--white{
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    background-color: transparent;
+    border-color: white;
+    color: white;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &.active{
+      background-color: white;
+      color: $color-primary;
+    }
+
+  }
+
 
   &--lg{
     font-size: 1.8rem;
@@ -51,7 +73,7 @@
 
 
   &:disabled{
-    opacity: 0.2;
+    opacity: 0.7;
     cursor: not-allowed;
   }
 

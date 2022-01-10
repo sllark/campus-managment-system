@@ -6,6 +6,7 @@ const User = require('../models/User')
 const authController = require('../controllers/authControllers')
 const validateExpress = require('../helpers/validateExpress')
 
+
 const router = express.Router();
 
 
@@ -18,12 +19,10 @@ router.post('/signup',
                     else return true;
                 })
         }).normalizeEmail(),
-        body('instituteName').not().isEmpty().isLength({min: 6}).withMessage('Institute Name too short.'),
-        body('password').not().isEmpty().isLength({min: 6}).withMessage('Password too short.'),
-        body('firstName').not().isEmpty().isLength({min: 1}).withMessage('First Name not found.'),
-        body('lastName').not().isEmpty().isLength({min: 1}).withMessage('Last Name not found.'),
-        body('dob').not().isEmpty().isLength({min: 1}).withMessage('Date of Birth not found.'),
-        body('gender').not().isEmpty().isLength({min: 1}).withMessage('Gender not found.'),
+        body('instituteName').notEmpty().withMessage('Institute Name must have 1 character.'),
+        body('password').notEmpty().isLength({min: 6}).withMessage('Password must have 6 character.'),
+        body('firstName').notEmpty().withMessage('First Name must have 1 character.'),
+        body('lastName').notEmpty().withMessage('Last Name must have 1 character.'),
     ]
     , validateExpress, asyncHandler(authController.signup))
 
@@ -31,16 +30,15 @@ router.post('/signup',
 router.post('/login',
     [
         body('email').isEmail().withMessage('Please enter a valid email.').custom(email => {
-            return User.findOne({email: email})
-                .then(fetchedUser => {
-
-                    if (!fetchedUser)
-                        return Promise.reject('Email or Password does not match.');
+            return User.exists({email: email})
+                .then(isPresent => {
+                    if (!isPresent)
+                        return Promise.reject('Email not found.');
                     else
                         return true;
                 })
         }).normalizeEmail(),
-        body('password').not().isEmpty().isLength({min: 6}).withMessage('Password too short.')
+        body('password').notEmpty().isLength({min: 6}).withMessage('Password must have 6 character.'),
     ], validateExpress, asyncHandler(authController.login))
 
 module.exports = router;

@@ -8,9 +8,8 @@ const authRoutes = require('./routes/authRoutes')
 const classRoutes = require('./routes/classRoutes')
 const userRoutes = require('./routes/userRoutes')
 
-
+const {MONGOURI} = require('./config/keys')
 const PORT = process.env.PORT || 3344;
-const MONGOURI = "mongodb://127.0.0.1:27017/cms"
 const app = express();
 
 

@@ -1,15 +1,16 @@
 const {validationResult} = require('express-validator');
 const bcrypt = require('bcrypt');
-const {JWT_SECRET} = require('../config/keys')
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/User');
 const Institute = require('../models/Institute');
 
+const {JWT_SECRET} = require('../config/keys')
+
 
 exports.signup = async (req, res, next) => {
 
-    const {instituteName, firstName, lastName, gender, email, dob, password} = req.body;
+    const {instituteName, firstName, lastName, email, password} = req.body;
 
     let hash = await bcrypt.hash(password, 12)
 
@@ -27,8 +28,6 @@ exports.signup = async (req, res, next) => {
         'institute': newInstitute._id.toString(),
         firstName,
         lastName,
-        gender,
-        dob,
     });
 
     await newUser.save();
