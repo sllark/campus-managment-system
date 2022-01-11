@@ -31,10 +31,12 @@ const Dashboard = (props) => {
                     <Route path='/classes' element={<Classes/>}/>
                     <Route path='/classInfo/:id' element={<ClassInfo/>}/>
                     <Route path='/classInfo' element={<ClassInfo/>}/>
+                    <Route path='/assignStudents' element={<AddTeacher/>}/>
 
                     <Route path='/addStudent' element={<AddStudent/>}/>
 
                     <Route path='/addTeacher' element={<AddTeacher/>}/>
+                    <Route path='/assignClasses' element={<AddTeacher/>}/>
 
                     <Route path='/markAttendance' element={<Attendance/>}/>
                     <Route path='/checkAttendance' element={<Attendance isStatic={true}/>}/>

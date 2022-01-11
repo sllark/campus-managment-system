@@ -23,6 +23,11 @@ const Sidebar = (props) => {
                     route: 'classInfo'
                 },
 
+                {
+                    name: 'Assign Student(s)',
+                    route: 'assignStudents'
+                },
+
             ]
         },
         {
@@ -48,6 +53,10 @@ const Sidebar = (props) => {
                 {
                     name: 'Teachers',
                     route: 'teachers'
+                },
+                {
+                    name: 'Assign Class(es)',
+                    route: 'assignClasses'
                 }
             ]
         },

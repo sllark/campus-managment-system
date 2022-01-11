@@ -4,5 +4,6 @@ server/images/*
 client/node_modules/
 node_modules/
 
+validateRule.txt
 .idea
 dev.js
