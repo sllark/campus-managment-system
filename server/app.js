@@ -13,7 +13,6 @@ const PORT = process.env.PORT || 3344;
 const app = express();
 
 
-
 app.use(bodyParser.json());
 
 
@@ -63,8 +62,9 @@ mongoose.connect(MONGOURI,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
+    }, function (error) {
+        if (error) console.log(error);
     })
-
 
 console.log(`connected! at post ${PORT}`)
 let server = app.listen(PORT)
