@@ -11,8 +11,6 @@ const Header = (props) => {
 
     const [showPopup, setShowPopup] = useState(false);
 
-    console.log(loc);
-
     return (
         <div className='header'>
 
@@ -23,7 +21,7 @@ const Header = (props) => {
                 {
                     !localStorage.getItem('cmsToken') && (
                         loc.pathname.includes('signup') ?
-                            <Link to='login' className="btn btn--white">
+                            <Link to='/' className="btn btn--white">
                                 Login
                             </Link>
                             : <Link to='signup' className="btn btn--white">
@@ -44,12 +42,9 @@ const Header = (props) => {
                         <div className={"header__nav__profile__popup " + (!showPopup ? "hidePopup" : "")}>
 
                             <h3 className="header__nav__profile__popup__header">
-                                Profile Name
+                                {localStorage.getItem("cmsUserName") || "Profile"}
                             </h3>
 
-                            <Link to='editProfile' className="header__nav__profile__popup__option">
-                                Edit Profile
-                            </Link>
                             <Link to='logout' className="header__nav__profile__popup__option">
                                 Logout
                             </Link>

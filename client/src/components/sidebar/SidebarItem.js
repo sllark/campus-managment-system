@@ -7,7 +7,7 @@ const SidebarItem = (props) => {
     const [showOption, SetShowOption] = useState(false)
 
 
-    // const shouldOpen = props.item.options.findIndex(ele => loc.pathname.includes(ele.route)) >= 0;
+    const shouldOpen = props.item.options.findIndex(ele => loc.pathname.includes(ele.route)) >= 0;
     return (
         <div className='sidebarItem'>
             <div className="sidebarItem__name" onClick={() => SetShowOption(!showOption)}>
@@ -15,7 +15,7 @@ const SidebarItem = (props) => {
                 <span className={'arrow' + (showOption ? ' rotateArrow' : '')}/>
             </div>
 
-            <div className={"sidebarItem__options" + (showOption ? ' showOption' : '')}>
+            <div className={"sidebarItem__options" + ((showOption || shouldOpen) ? ' showOption' : '')}>
                 {
                     props.item.options.map(opt => (
                         <Link key={opt.route} to={opt.route}

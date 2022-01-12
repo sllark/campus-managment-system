@@ -55,7 +55,8 @@ const AddTeacher = () => {
 
         axios
             .post('/addTeacher', {
-                ...values
+                ...values,
+                'role': 'Teacher'
             })
             .then(r => {
 
@@ -120,7 +121,6 @@ const AddTeacher = () => {
 
 
                     <div className="dashboard__form__fieldsCont">
-
 
 
                         <div className="formGroup">

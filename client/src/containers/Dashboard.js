@@ -8,11 +8,13 @@ import Classes from "../components/dashboard/instituteClass/Classes";
 import ClassInfo from "../components/dashboard/instituteClass/ClassInfo";
 
 import AddStudent from "../components/dashboard/student/AddStudent";
+import StudentsList from "../components/dashboard/student/StudentsList";
 
 import AddTeacher from "../components/dashboard/teacher/AddTeacher";
+import TeachersList from "../components/dashboard/teacher/TeachersList";
+import AssignTeachers from "../components/dashboard/teacher/AssignTeachers";
 
 import Attendance from "../components/dashboard/attendance/Attendance";
-import CheckAttendance from "../components/dashboard/attendance/CheckAttendance";
 
 const Dashboard = (props) => {
 
@@ -34,9 +36,11 @@ const Dashboard = (props) => {
                     <Route path='/assignStudents' element={<AddTeacher/>}/>
 
                     <Route path='/addStudent' element={<AddStudent/>}/>
+                    <Route path='/students' element={<StudentsList/>}/>
 
                     <Route path='/addTeacher' element={<AddTeacher/>}/>
-                    <Route path='/assignClasses' element={<AddTeacher/>}/>
+                    <Route path='/assignTeacher' element={<AssignTeachers/>}/>
+                    <Route path='/teachers' element={<TeachersList/>}/>
 
                     <Route path='/markAttendance' element={<Attendance/>}/>
                     <Route path='/checkAttendance' element={<Attendance isStatic={true}/>}/>

@@ -24,8 +24,8 @@ const Sidebar = (props) => {
                 },
 
                 {
-                    name: 'Assign Student(s)',
-                    route: 'assignStudents'
+                    name: 'Assign Class(es)',
+                    route: 'assignClasse'
                 },
 
             ]
@@ -55,8 +55,8 @@ const Sidebar = (props) => {
                     route: 'teachers'
                 },
                 {
-                    name: 'Assign Class(es)',
-                    route: 'assignClasses'
+                    name: 'Assign Teacher',
+                    route: 'assignTeacher'
                 }
             ]
         },

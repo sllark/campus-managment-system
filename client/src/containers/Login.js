@@ -39,7 +39,7 @@ const Login = (props) => {
                     localStorage.setItem('cmsUserID',data.userID)
                     localStorage.setItem('cmsRole',data.role)
                     localStorage.setItem('cmsInstituteID',data.instituteID)
-                    navigate('/dashboard')
+                    navigate('/dashboard/classes')
                 }
                 else {
                     setFormError(data.message)
@@ -124,7 +124,7 @@ const Login = (props) => {
                                 />
                             </div>
                             <button type="submit" disabled={isSubmitting} className='btn btn--primary'>
-                                Register
+                                Login
                             </button>
                         </Form>
                     )}

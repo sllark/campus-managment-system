@@ -62,6 +62,7 @@ router.post('/addTeacher', isAuth, [
                     else return true;
                 })
         }),
+    body('role').notEmpty().isLength({min: 1}).withMessage('Role not found.'),
     body('firstName').notEmpty().isLength({min: 1}).withMessage('First Name not found.'),
     body('lastName').notEmpty().isLength({min: 1}).withMessage('Last Name not found.'),
     body('dob').notEmpty().isLength({min: 1}).withMessage('Date of Birth not found.'),
@@ -81,6 +82,8 @@ router.get('/getClassStudents', isAuth, [
         })
 ], validateExpress, userController.getClassStudents)
 
+router.get('/getStudents', isAuth, userController.getStudents)
+
 
 router.get('/getClassTeachers', isAuth, [
     check('teacherClass').notEmpty().withMessage('Please select a valid Class!')
@@ -92,6 +95,22 @@ router.get('/getClassTeachers', isAuth, [
                 })
         })
 ], validateExpress, userController.getClassTeachers)
+
+router.get('/getTeachers', isAuth, userController.getTeachers)
+
+router.get('/getTeachersWithClasses', isAuth, userController.getTeachersWithClasses)
+
+router.post('/updateTeacherClasses', isAuth, [
+    check('userID').notEmpty().withMessage('Please select a valid Teacher!')
+        .custom((value, {req}) => {
+            return User.exists({_id: value, institute: req.user.instituteID, 'role': 'Teacher'})
+                .then(isPresent => {
+                    if (!isPresent) return Promise.reject('Teacher not found!');
+                    else return true;
+                })
+        }),
+    check('classes').isArray().withMessage('No Class Found!')
+], validateExpress, userController.updateTeacherClasses)
 
 
 router.post('/markAttendance', isAuth, [

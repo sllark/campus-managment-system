@@ -53,11 +53,11 @@ exports.signup = async (req, res, next) => {
                 userID: newUser._id.toString(),
                 instituteID: newUser.institute.toString(),
                 role: newUser.role,
+                userName: newUser.firstName + " " + newUser.lastName
             });
     })
 
 }
-
 
 exports.login = async (req, res, next) => {
 
@@ -81,7 +81,6 @@ exports.login = async (req, res, next) => {
     }
 
 
-
     jwt.sign(payload, JWT_SECRET, (error, token) => {
         if (error) return next(new Error('Internal Server Error'));
 
@@ -92,9 +91,10 @@ exports.login = async (req, res, next) => {
                 userID: user._id.toString(),
                 instituteID: user._id.toString(),
                 role: user.role,
+                userName: user.firstName + " " + user.lastName
+
             });
     })
 
 
 }
-
