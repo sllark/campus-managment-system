@@ -1,4 +1,3 @@
-const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -63,7 +62,10 @@ mongoose.connect(MONGOURI,
         useNewUrlParser: true,
         useUnifiedTopology: true
     }, function (error) {
-        if (error) console.log(error);
+        if (error) {
+            console.log('MONGOURI=',MONGOURI);
+            console.log(error);
+        }
     })
 
 console.log(`connected! at post ${PORT}`)
