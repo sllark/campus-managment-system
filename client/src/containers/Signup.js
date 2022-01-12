@@ -41,6 +41,8 @@ const Signup = (props) => {
                     localStorage.setItem('cmsUserID',data.userID)
                     localStorage.setItem('cmsRole',data.role)
                     localStorage.setItem('cmsInstituteID',data.instituteID)
+                    localStorage.setItem('cmsUserName',data.userName)
+
                     navigate('/dashboard/addClass')
                 }
                 else {
