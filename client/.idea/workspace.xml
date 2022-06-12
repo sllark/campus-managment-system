@@ -5,8 +5,72 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcf9ce6d-b38e-41e4-a4b7-33306d3ec24a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/core/buttons/ClassButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/core/input/Checkbox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/dashboard/instituteClass/AddClass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/dashboard/subject/AddSubject.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/dashboard/subject/SubjectDetails.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/dashboard/subject/Subjects.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/dashboard/teacher/AssignTeachers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/dashboard/teacher/TeacherDetails.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/dashboard/user/UserDetails.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/controllers/instituteClass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/controllers/subject.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/controllers/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/helpers/checkClassesID.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/models/Subject.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/models/SubjectTeacherClass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/routes/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/routes/instituteClass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/routes/subject.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/routes/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assests/config/configs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assests/config/configs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assests/sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assests/sass/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/attendance/Attendance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/attendance/Attendance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/attendance/CheckAttendance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/attendance/CheckAttendance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/instituteClass/AddClass.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/instituteClass/ClassInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/instituteClass/ClassInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/instituteClass/Classes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/instituteClass/Classes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/student/AddStudent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/student/AddStudent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/student/StudentsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/student/StudentsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/table/DashboardTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/table/DashboardTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/teacher/AddTeacher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/teacher/AddTeacher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/teacher/AssignTeachers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/teacher/TeachersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/teacher/TeachersList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/SidebarItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/SidebarItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/FieldHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/FieldHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Loading.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/fieldChangeHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/fieldChangeHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/formValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/formValidation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/getClasses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/getClasses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reportWebVitals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/controllers/authControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/controllers/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/controllers/classControllers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/controllers/userControllers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/models/InstituteClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/models/InstituteClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/routes/authRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/routes/classRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/routes/userRoutes.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +102,9 @@
     <layout place="tools.popupGrunt">
       <scroll-view-position x="0" y="0" />
     </layout>
+    <layout place="tools.popupnpm">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -55,25 +122,32 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="javascript.nodejs.core.library.configured.version" value="16.13.2" />
+    <property name="javascript.nodejs.core.library.typings.version" value="16.11.39" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/containers/dashboard/subject" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client\src\helpers" />
-      <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client\src\components\ui" />
-      <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client\src\components\dashboard\table" />
-      <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client\src\components\dashboard\attendance" />
-      <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client\src\components\dashboard\teacher" />
+      <recent name="C:\Users\WB\PhpstormProjects\Campus-Managment\client\src\containers\dashboard\subject" />
+      <recent name="C:\Users\WB\PhpstormProjects\Campus-Managment\client\src\containers\dashboard\student" />
+      <recent name="C:\Users\WB\PhpstormProjects\Campus-Managment\client\src\containers\dashboard\user" />
+      <recent name="C:\Users\WB\PhpstormProjects\Campus-Managment\client\src\containers" />
+      <recent name="C:\Users\WB\PhpstormProjects\Campus-Managment\client\src\components\dashboard\student" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\WB\PhpstormProjects\Campus-Managment\client\src\containers\dashboard\subject" />
+      <recent name="C:\Users\WB\PhpstormProjects\Campus-Managment\client\src\containers" />
+      <recent name="C:\Users\WB\PhpstormProjects\Campus-Managment\client\src\pages" />
       <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client\src\components\sidebar" />
       <recent name="C:\Users\AQ\PhpstormProjects\fullStackProjects\04-schools-managment-system\client\assests\sass\layout" />
     </key>
@@ -97,6 +171,8 @@
       <workItem from="1641915512581" duration="1235000" />
       <workItem from="1641925588057" duration="610000" />
       <workItem from="1641933687665" duration="47000" />
+      <workItem from="1654979360979" duration="3231000" />
+      <workItem from="1654989538315" duration="17561000" />
     </task>
     <servers />
   </component>

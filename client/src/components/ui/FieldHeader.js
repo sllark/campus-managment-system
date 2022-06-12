@@ -1,10 +1,7 @@
-import React from "react"
-
+import React from 'react'
 
 const FieldHeader = (props) => {
-
-
-    return (
+  return (
         <label htmlFor={props.name}>
             <p>
                 {
@@ -15,10 +12,7 @@ const FieldHeader = (props) => {
                 {(props.error || props.backendError) && props.touched && (props.error || props.backendError)}
             </span>
         </label>
-    )
-
-
+  )
 }
 
-
-export default FieldHeader;
+export default FieldHeader

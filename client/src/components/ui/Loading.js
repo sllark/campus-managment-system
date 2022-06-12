@@ -1,13 +1,10 @@
-import React from "react";
+import React from 'react'
 
-
-function Loading(props) {
-
-
-    return (
+function Loading (props) {
+  return (
         <div className={
-            "loading" +
-            (props.flexStart ? " flex-start" : "")
+            'loading' +
+            (props.flexStart ? ' flex-start' : '')
         }>
 
             <div className="lds-ripple">
@@ -16,9 +13,7 @@ function Loading(props) {
             </div>
 
         </div>
-    );
+  )
+}
 
-};
-
-
-export default Loading;
+export default Loading

@@ -1,20 +1,16 @@
-import React from "react"
-import {Route, Routes} from "react-router-dom";
-
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
 
 import './assests/sass/main.scss'
 
 import Header from './components/ui/Header'
 
-import Signup from './containers/Signup'
-import Login from './containers/Login'
-import Dashboard from './containers/Dashboard'
-
+import Signup from './pages/Signup'
+import Login from './pages/Login'
+import Dashboard from './pages/Dashboard'
 
 const App = (props) => {
-
-
-    return (
+  return (
         <>
             <Header/>
             <Routes>
@@ -24,10 +20,7 @@ const App = (props) => {
             </Routes>
         </>
 
-    )
-
-
+  )
 }
 
-
-export default App;
+export default App

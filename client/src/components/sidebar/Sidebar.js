@@ -1,86 +1,90 @@
-import React from "react"
+import React from 'react'
 
-import SidebarItem from "./SidebarItem";
+import SidebarItem from './SidebarItem'
 
-const Sidebar = (props) => {
-
-
-    const items = [
+const Sidebar = () => {
+  const items = [
+    {
+      name: 'Class',
+      options: [
         {
-            name: 'Class',
-            options: [
-                {
-                    name: 'Add Class',
-                    route: 'addClass'
-                },
-                {
-                    name: 'Classes',
-                    route: 'classes'
-                },
-
-                {
-                    name: 'Class Information',
-                    route: 'classInfo'
-                },
-
-                {
-                    name: 'Assign Class(es)',
-                    route: 'assignClasse'
-                },
-
-            ]
+          name: 'Add Class',
+          route: 'addClass'
         },
         {
-            name: 'Student',
-            options: [
-                {
-                    name: 'Add Student',
-                    route: 'addStudent'
-                },
-                {
-                    name: 'Students',
-                    route: 'students'
-                }
-            ]
+          name: 'Classes',
+          route: 'classes'
+        },
+
+        {
+          name: 'Class Information',
+          route: 'classInfo'
+        }
+      ]
+    },
+    {
+      name: 'Subject',
+      options: [
+        {
+          name: 'Add Subject',
+          route: 'addSubject'
         },
         {
-            name: 'Teacher',
-            options: [
-                {
-                    name: 'Add Teacher',
-                    route: 'addTeacher'
-                },
-                {
-                    name: 'Teachers',
-                    route: 'teachers'
-                },
-                {
-                    name: 'Assign Teacher',
-                    route: 'assignTeacher'
-                }
-            ]
+          name: 'Subjects',
+          route: 'subjects'
+        }
+      ]
+    },
+    {
+      name: 'Student',
+      options: [
+        {
+          name: 'Add Student',
+          route: 'addStudent'
         },
         {
-            name: 'Attendance',
-            options: [
-                {
-                    name: 'Mark Attendance',
-                    route: 'markAttendance'
-                },
-                {
-                    name: 'Check Attendance',
-                    route: 'checkAttendance'
-                }
-            ]
+          name: 'Students',
+          route: 'students'
+        }
+      ]
+    },
+    {
+      name: 'Teacher',
+      options: [
+        {
+          name: 'Add Teacher',
+          route: 'addTeacher'
         },
+        {
+          name: 'Teachers',
+          route: 'teachers'
+        },
+        {
+          name: 'Assign Teacher',
+          route: 'assignTeacher'
+        }
+      ]
+    },
+    {
+      name: 'Attendance',
+      options: [
+        {
+          name: 'Mark Attendance',
+          route: 'markAttendance'
+        },
+        {
+          name: 'Check Attendance',
+          route: 'checkAttendance'
+        }
+      ]
+    }
 
-    ]
+  ]
 
-
-    return (
+  return (
         <div className='sidebar'>
             {
-                items.map((ele,index) =>
+                items.map((ele, index) =>
                     <SidebarItem
                         key={index}
                         item={ele}
@@ -89,10 +93,7 @@ const Sidebar = (props) => {
             }
 
         </div>
-    )
-
-
+  )
 }
 
-
-export default Sidebar;
+export default Sidebar
