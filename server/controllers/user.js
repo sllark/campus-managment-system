@@ -1,10 +1,15 @@
 const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
 const asyncHandler = require('express-async-handler')
 
 const InstituteClass = require('../models/InstituteClass')
 const User = require('../models/User')
 const Attendance = require('../models/Attendance')
 const checkClassesID = require('../helpers/checkClassesID')
+const sendEmail = require('../helpers/sendEmail')
+
+const { CLIENT_URL } = require('../config/keys')
+const crypto = require('crypto')
 
 const addUser = async (req, res) => {
   const {
@@ -47,6 +52,16 @@ const addUser = async (req, res) => {
     cls.students.push(newUser._id)
     await cls.save()
   }
+
+  const token = crypto.randomBytes(32).toString('hex')
+  const tokenHash = await bcrypt.hash(token, 10)
+  const link = `${CLIENT_URL}/set-password?token=${tokenHash}&id=${newUser._id}`
+  await sendEmail(email, 'Account Password.', {
+    name: `${firstName} ${lastName}`, link
+  })
+
+  newUser.passwordSetToken = token
+  await newUser.save()
 
   res.status(201)
     .json({

@@ -1,6 +1,6 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-
+import React, { useEffect } from 'react'
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
+import isAuth from 'helpers/isAuth'
 import Sidebar from 'components/sidebar/Sidebar'
 
 import AddClass from 'containers/dashboard/instituteClass/AddClass'
@@ -10,6 +10,7 @@ import ClassInfo from 'containers/dashboard/instituteClass/ClassInfo'
 import AddSubject from 'containers/dashboard/subject/AddSubject'
 import Subjects from 'containers/dashboard/subject/Subjects'
 import SubjectDetails from 'containers/dashboard/subject/SubjectDetails'
+import AssignSubject from 'containers/dashboard/subject/AssignSubject'
 
 import AddStudent from 'containers/dashboard/student/AddStudent'
 import StudentsList from 'containers/dashboard/student/StudentsList'
@@ -23,8 +24,18 @@ import Attendance from 'containers/dashboard/attendance/Attendance'
 import UserDetails from 'containers/dashboard/user/UserDetails'
 
 const Dashboard = (props) => {
-  return (
+  const navigate = useNavigate()
+  const location = useLocation()
 
+  useEffect(() => {
+    if (!isAuth()) {
+      navigate('/login', { replace: true })
+    } else if (location.pathname === '/dashboard') {
+      navigate('/dashboard/addClass', { replace: true })
+    }
+  }, [])
+
+  return (
         <div className='dashboard'>
             <Sidebar/>
             <div className="dashboard__container">
@@ -42,6 +53,7 @@ const Dashboard = (props) => {
                     <Route path='/addStudent' element={<AddStudent/>}/>
                     <Route path='/students' element={<StudentsList/>}/>
                     <Route path='/students/:id' element={<UserDetails/>}/>
+                    <Route path='/assignSubject' element={<AssignSubject/>}/>
 
                     <Route path='/addTeacher' element={<AddTeacher/>}/>
                     <Route path='/assignTeacher' element={<AssignTeachers/>}/>

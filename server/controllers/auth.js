@@ -86,7 +86,41 @@ const login = async (req, res, next) => {
   })
 }
 
+const setPassword = async (req, res, next) => {
+  const { userID, token, password } = req.body
+  const user = await User.findById(userID)
+
+  const isValid = await bcrypt.compare(user.passwordSetToken, token)
+  if (!isValid) {
+    return next(new Error('Invalid Token!'))
+  }
+
+  user.password = await bcrypt.hash(password, 10)
+  user.passwordSetToken = null
+  await user.save()
+
+  const payload = {
+    userID: user._id.toString(),
+    instituteID: user.institute.toString(),
+    role: user.role
+  }
+  jwt.sign(payload, JWT_SECRET, (error, token) => {
+    if (error) return next(new Error('Internal Server Error'))
+
+    res.status(200)
+      .json({
+        message: 'success',
+        token,
+        userID: user._id.toString(),
+        instituteID: user._id.toString(),
+        role: user.role,
+        userName: user.firstName + ' ' + user.lastName
+      })
+  })
+}
+
 module.exports = {
   signup: asyncHandler(signup),
-  login: asyncHandler(login)
+  login: asyncHandler(login),
+  setPassword: asyncHandler(setPassword)
 }

@@ -60,8 +60,13 @@ const User = new Schema({
   },
   joiningDate: {
     type: String
-  }
+  },
 
+  // Account Related fields
+  passwordSetToken: {
+    type: String,
+    default: ''
+  }
 })
 
 User.methods.changeStudentClass = async function (classID) {

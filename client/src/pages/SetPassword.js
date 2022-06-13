@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Field, Form, Formik } from 'formik'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams, useLocation } from 'react-router-dom'
 
 import logo from 'assests/img/logo_colors.svg'
 import axios from 'helpers/axios'
@@ -11,12 +11,13 @@ import fieldChangeHandler from 'helpers/fieldChangeHandler'
 import isAuth from 'helpers/isAuth'
 
 const initState = {
-  email: '',
-  password: ''
+  password: '',
+  confirmPassword: ''
 }
 
 const Login = () => {
   const navigate = useNavigate()
+  const location = useLocation()
   const [backendErrors, setBackendErrors] = useState({})
   const [formError, setFormError] = useState(null)
 
@@ -24,14 +25,26 @@ const Login = () => {
     if (isAuth()) {
       navigate('/dashboard', { replace: true })
     }
+    const params = new URLSearchParams(location.search)
+    if (!params.get('token') || !params.get('token')) navigate('/login', { replace: true })
   }, [])
 
   const submitForm = (values, { setSubmitting, setFieldError }) => {
+    if (values.password !== values.confirmPassword) {
+      setFieldError('confirmPassword', 'Password do not Match')
+      setSubmitting(false)
+      return
+    }
     setFormError(null)
+    const params = new URLSearchParams(location.search)
+    const userID = params.get('id')
+    const token = params.get('token')
 
     axios
-      .post('/login', {
-        ...values
+      .post('/set-password', {
+        ...values,
+        userID,
+        token
       })
       .then(r => {
         const data = r.data
@@ -82,47 +95,51 @@ const Login = () => {
                                   : null
                             }
                             <div className="formGroup">
-
-                                <FieldHeader
-                                    name='email'
-                                    error={errors.email}
-                                    backendError={backendErrors.email}
-                                    touched={touched.email}
-                                />
-
-                                <Field
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    validate={validate.validateEmail}
-                                    onChange={(e) => fieldChangeHandler(e, handleChange, backendErrors, setBackendErrors)}
-                                />
-                            </div>
-                            <div className="formGroup">
-
                                 <FieldHeader
                                     name='password'
                                     error={errors.password}
                                     backendError={backendErrors.password}
                                     touched={touched.password}
                                 />
-
                                 <Field
                                     type="password"
                                     name="password"
                                     id="password"
                                     validate={(value) => validate.minLength(value, 'Password', 6)}
-                                    onChange={(e) => fieldChangeHandler(e, handleChange, backendErrors, setBackendErrors)}
+                                    onChange={(e) => {
+                                      setFormError(null)
+                                      fieldChangeHandler(e, handleChange, backendErrors, setBackendErrors)
+                                    }}
+                                />
+                            </div>
+                            <div className="formGroup">
+                                <FieldHeader
+                                    header='Confirm Password'
+                                    name='confirmPassword'
+                                    error={errors.confirmPassword}
+                                    backendError={backendErrors.confirmPassword}
+                                    touched={touched.confirmPassword}
+                                />
+                                <Field
+                                    type="password"
+                                    name="confirmPassword"
+                                    id="confirmPassword"
+                                    validate={(value) => validate.minLength(value, 'Confirm Password', 6)}
+                                    onChange={(e) => {
+                                      setFormError(null)
+                                      fieldChangeHandler(e, handleChange, backendErrors, setBackendErrors)
+                                    }}
                                 />
                             </div>
                             <button type="submit" disabled={isSubmitting} className='btn btn--primary'>
-                                Login
+                                Set Password
                             </button>
                         </Form>
                     )}
                 </Formik>
 
             </div>
+
         </div>
   )
 }

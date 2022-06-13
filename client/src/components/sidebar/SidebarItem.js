@@ -15,12 +15,15 @@ const SidebarItem = (props) => {
 
             <div className={'sidebarItem__options' + ((showOption || shouldOpen) ? ' showOption' : '')}>
                 {
-                    props.item.options.map(opt => (
-                        <Link key={opt.route} to={opt.route}
-                              className={loc.pathname.includes(opt.route) ? 'active' : ''}>
-                            {opt.name}
-                        </Link>
-                    ))
+                    props.item.options.map(opt => {
+                      if (opt.roles && !opt.roles.includes(localStorage.getItem('cmsRole'))) return null
+                      return (
+                            <Link key={opt.route} to={opt.route}
+                                  className={loc.pathname.includes(opt.route) ? 'active' : ''}>
+                                {opt.name}
+                            </Link>
+                      )
+                    })
                 }
 
             </div>

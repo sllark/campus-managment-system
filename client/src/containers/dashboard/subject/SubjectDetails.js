@@ -11,6 +11,7 @@ const SubjectDetails = () => {
 
   const [formFeedback, setFormFeedback] = useState({})
   const [subject, setSubject] = useState({})
+  const [subjectMetadata, setSubjectMetadata] = useState({})
 
   const [isLoading, setLoading] = useState(false)
 
@@ -30,6 +31,7 @@ const SubjectDetails = () => {
         const data = r.data
         if (data.message === 'success') {
           setSubject(data.subject)
+          setSubjectMetadata(data.data)
         } else {
           setFormFeedback({
             type: 'error',
@@ -77,7 +79,7 @@ const SubjectDetails = () => {
                         Name
                     </div>
                     <div className="w-20">
-                        Subjects
+                        Teachers
                     </div>
                     <div className="w-20">
                         Students
@@ -91,8 +93,8 @@ const SubjectDetails = () => {
                         isLoading
                           ? <Loading/>
                           : subject.name && (
-                            subject.classes?.length
-                              ? subject.classes.map((ele, index) =>
+                            subjectMetadata.classes?.length
+                              ? subjectMetadata.classes.map((ele, index) =>
                                         <TableItem
                                             key={ele._id}
                                             index={index}
@@ -137,8 +139,8 @@ const SubjectDetails = () => {
                         isLoading
                           ? <Loading/>
                           : subject.name && (
-                            subject.teachers?.length > 0
-                              ? subject.teachers.map((ele, index) =>
+                            subjectMetadata.teachers?.length > 0
+                              ? subjectMetadata.teachers.map((ele, index) =>
                                         <TableItem
                                             key={ele._id}
                                             index={index}

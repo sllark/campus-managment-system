@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Field, Form, Formik } from 'formik'
 import { useNavigate } from 'react-router-dom'
 import FieldHeader from '../components/ui/FieldHeader'
@@ -8,6 +8,7 @@ import axios from '../helpers/axios'
 import fieldChangeHandler from '../helpers/fieldChangeHandler'
 
 import logo from '../assests/img/logo_colors.svg'
+import isAuth from '../helpers/isAuth'
 
 const Signup = (props) => {
   const navigate = useNavigate()
@@ -62,6 +63,12 @@ const Signup = (props) => {
         setSubmitting(false)
       })
   }
+
+  useEffect(() => {
+    if (isAuth()) {
+      navigate('/dashboard', { replace: true })
+    }
+  }, [])
 
   return (
         <div className='authPage'>
